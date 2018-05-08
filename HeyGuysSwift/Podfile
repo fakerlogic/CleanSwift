@@ -1,0 +1,51 @@
+
+platform :ios, '9.0'
+
+
+def rx_swift
+    pod 'RxSwift'
+end
+
+def rx_cocoa
+    pod 'RxCocoa'
+end
+
+
+target 'HeyGuysSwift' do
+    use_frameworks!
+
+    rx_swift
+    rx_cocoa
+    pod 'SnapKit'
+#    pod 'RxFlow'
+#    pod 'Moya'
+    pod 'Moya/RxSwift'
+    pod 'Toast-Swift'
+    pod 'QMUIKit'
+    
+    target 'HeyGuysSwiftTests' do
+        inherit! :search_paths
+    
+    end
+
+    target 'HeyGuysSwiftUITests' do
+        inherit! :search_paths
+    
+    end
+
+end
+
+
+target 'NetworkPlatform' do
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    rx_swift
+    pod 'Alamofire'
+    pod 'RxAlamofire'
+#    pod 'Moya'
+
+    target 'NetworkPlatformTests' do
+        inherit! :search_paths
+    end
+    
+end
