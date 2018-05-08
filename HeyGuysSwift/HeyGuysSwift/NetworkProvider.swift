@@ -14,7 +14,7 @@ import Result
 
 
 protocol Network {
-    func loginBy(_ phone: String, capcha: String) -> Observable<Bool>
+    func loginBy(_ phone: String, capcha: String) -> Observable<UserInfo?>
     func getCapChaBy(_ phone: String) -> Observable<Bool>
 }
 
@@ -26,9 +26,11 @@ class NetworkProvider: Network {
 
 extension NetworkProvider {
     
-    func loginBy(_ phone: String, capcha: String) -> Observable<Bool> {
-        return loginAPIProvider.rx.request(.login(phone, capcha)).debug().asObservable().mapObject(type: Model<Bool>.self).map({ model in
-            return model.data ?? false
+    func loginBy(_ phone: String, capcha: String) -> Observable<UserInfo?> {
+        
+        return loginAPIProvider.rx.request(.login(phone, capcha)).debug().asObservable().mapObject(type: Model<UserInfo>.self).map({ model in
+            
+            return model.data ?? nil
         })
     }
     

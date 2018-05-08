@@ -33,7 +33,7 @@ final class LoginViewModel: ViewModelType {
         let phoneAndCapcha = Driver.combineLatest(input.phone, input.capcha) { (phone: $0, capcha: $1) }
         
         let login = input.loginTrigger.withLatestFrom(phoneAndCapcha).flatMapLatest { phone, capcha in
-            return NetworkProvider.provider.loginBy(phone, capcha: capcha).asDriver(onErrorJustReturn: false)
+            return NetworkProvider.provider.loginBy(phone, capcha: capcha).asDriver(onErrorJustReturn: nil)
         }
         
         let dismiss = Driver.of(input.dismissTrigger).merge().do(onNext:({
@@ -72,7 +72,7 @@ extension LoginViewModel {
         // 获取验证码结果
         let getCapcha: Driver<Bool>
         // 登录结果
-        let login: Driver<Bool>
+        let login: Driver<UserInfo?>
         // 关闭当前页面的信号
         let dismiss: Driver<Void>
         // 注册

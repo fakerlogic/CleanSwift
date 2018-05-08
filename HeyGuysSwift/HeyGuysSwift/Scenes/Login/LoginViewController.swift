@@ -44,7 +44,10 @@ class LoginViewController: QMUICommonViewController {
         output.dismiss.drive().disposed(by: disposeBag)
         output.getCapcha.drive().disposed(by: disposeBag)
         output.register.drive().disposed(by: disposeBag)
-        output.login.drive().disposed(by: disposeBag)
+//        output.login.drive().disposed(by: disposeBag)
+        output.login.drive(onNext: { userInfo in
+            print("userinfo \(userInfo)")
+        }).disposed(by: disposeBag)
     }
     
     override func preferredNavigationBarHidden() -> Bool {

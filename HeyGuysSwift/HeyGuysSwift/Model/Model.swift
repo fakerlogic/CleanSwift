@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Model<T: Codable>: Codable {
+final class Model<T: Codable>: Codable {
     var errorCode: String?
     var errorMsg: String?
     var repeatAct: String?
@@ -17,3 +17,26 @@ class Model<T: Codable>: Codable {
     var succeed: Bool?
     var data: T?
 }
+
+
+final class UserInfo: Codable {
+    var accountNo: String?
+    var ID: String?
+    var passwordFlag: String?
+    var userAddress: String?
+    var areacounty: String?
+    var invitationNumber: String?
+    var userPhone: String?
+    var province: String?
+    var street: String?
+    var code: String?
+    var userName: String?
+    var userLevel: String?
+    var city: String?
+    var openId: String?
+    var shopName: String?
+    var cityId: String?
+    var detailedAddress: String?
+    
+}
+

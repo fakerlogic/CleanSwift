@@ -176,6 +176,7 @@
 		D279EA2820A198E7008C6249 /* ShopCar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopCar.storyboard; sourceTree = "<group>"; };
 		D279EA2A20A198F6008C6249 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		D279EA2C20A19900008C6249 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D279EA2E20A19EFE008C6249 /* HeyGuysSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeyGuysSwift.entitlements; sourceTree = "<group>"; };
 		D2DA1C44205B977800871E38 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D2FC27B42058EFA900EE1C3B /* HeyGuysSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeyGuysSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FC27B72058EFA900EE1C3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -413,6 +414,7 @@
 		D2FC27B62058EFA900EE1C3B /* HeyGuysSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D279EA2E20A19EFE008C6249 /* HeyGuysSwift.entitlements */,
 				D2FC27B72058EFA900EE1C3B /* AppDelegate.swift */,
 				D24E3C9B208EC85B00F87C33 /* Application.swift */,
 				D20030AF209C47DA003BA54F /* Config.swift */,
@@ -594,6 +596,11 @@
 					D2FC27B32058EFA900EE1C3B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D2FC27C72058EFAA00EE1C3B = {
 						CreatedOnToolsVersion = 9.2;
@@ -815,7 +822,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HeyGuysSwift/Pods-HeyGuysSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -828,7 +834,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -1264,6 +1269,7 @@
 			baseConfigurationReference = 539AB0780BD29CC7874A0B05 /* Pods-HeyGuysSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeyGuysSwift/HeyGuysSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A9AX8LHKV;
 				INFOPLIST_FILE = HeyGuysSwift/Info.plist;
@@ -1281,6 +1287,7 @@
 			baseConfigurationReference = BA0826C2653EB3E14F6FFD69 /* Pods-HeyGuysSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HeyGuysSwift/HeyGuysSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6A9AX8LHKV;
 				INFOPLIST_FILE = HeyGuysSwift/Info.plist;
