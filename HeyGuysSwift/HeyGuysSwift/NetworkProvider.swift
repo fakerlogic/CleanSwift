@@ -40,15 +40,6 @@ extension NetworkProvider {
     }
 }
 
-//public extension ObservableType where E == Moya.Response {
-//
-//    public func map<T>(to type: T.Type, using decoder: JSONDecoder = JSONDecoder()) -> Observable<T> where T: Swift.Decodable {
-//        return map {
-//            try $0.map(type, using: decoder)
-//        }
-//    }
-//
-//}
 public extension ObservableType where E == Response {
     /// Maps data received from the signal into an object which implements the ALSwiftyJSONAble protocol.
     /// If the conversion fails, the signal errors.
@@ -100,12 +91,3 @@ public extension Response {
     }
 }
 
-//extension Response {
-//    func mapObject<T>(_ type: T.Type, using decoder: JSONDecoder = .init()) throws -> T where T: Decodable {
-//        return try decoder.decode(T.self, from: data)
-//    }
-//
-//    func mapArray<T>(_ type: T.Type, using decoder: JSONDecoder = .init()) throws -> [T] where T: Decodable {
-//        return try decoder.decode(Array<T>.self, from: data)
-//    }
-//}
